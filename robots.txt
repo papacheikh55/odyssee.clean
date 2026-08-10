@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://odyssee-clean.netlify.app/sitemap.xml
