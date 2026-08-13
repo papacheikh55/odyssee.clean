@@ -183,7 +183,8 @@ const menuToggle = document.getElementById('menuToggle');
       "addressCountry": "SN"
     },
     "sameAs": [
-      "https://wa.me/221781628141"
+      "https://wa.me/221781628141",
+      "https://www.tiktok.com/@odysseeclean221"
     ],
     "makesOffer": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nettoyage de fauteuils et canapés" } },
