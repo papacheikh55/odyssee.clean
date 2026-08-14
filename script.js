@@ -125,7 +125,8 @@ const menuToggle = document.getElementById('menuToggle');
       phoneEl.setCustomValidity('');
 
       const name = document.getElementById('bName').value.trim() || 'Non renseigné';
-      const service = document.getElementById('bService').value;
+      const checkedServices = Array.from(document.querySelectorAll('input[name="bService"]:checked')).map(el => el.value);
+      const service = checkedServices.length ? checkedServices.join(', ') : 'Non spécifié';
       const quartier = document.getElementById('bQuartier').value || 'Non renseigné';
       const address = document.getElementById('bAddress').value.trim();
 
@@ -142,8 +143,30 @@ const menuToggle = document.getElementById('menuToggle');
       }
 
       window.open('https://wa.me/221781628141?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
-      if (typeof closeBookingPopup === 'function') closeBookingPopup();
+
+      // Vider le formulaire et réinitialiser l'état (géolocalisation, quartier...)
+      bookingForm.reset();
+      sharedLocation = null;
+      if (geoBtn) {
+        geoBtn.classList.remove('done');
+        geoBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Partager ma position actuelle';
+      }
+      if (geoStatus) geoStatus.textContent = '';
+
+      // Afficher la confirmation à la place du formulaire
+      bookingForm.style.display = 'none';
+      const bookingSuccess = document.getElementById('bookingSuccess');
+      if (bookingSuccess) bookingSuccess.classList.add('show');
     });
+
+    const newRequestBtn = document.getElementById('newRequestBtn');
+    if (newRequestBtn) {
+      newRequestBtn.addEventListener('click', () => {
+        const bookingSuccess = document.getElementById('bookingSuccess');
+        if (bookingSuccess) bookingSuccess.classList.remove('show');
+        bookingForm.style.display = '';
+      });
+    }
   }
 
   const faqItems = document.querySelectorAll('.faq-item');
