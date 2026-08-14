@@ -195,7 +195,7 @@ const menuToggle = document.getElementById('menuToggle');
     "image": "https://odyssee-clean.netlify.app/logo.png",
     "telephone": "+221781628141",
     "email": "odysseeclean221@gmail.com",
-    "priceRange": "5000-22000 XOF",
+    "priceRange": "5000-24000 XOF",
     "areaServed": [
       { "@type": "City", "name": "Dakar" },
       { "@type": "City", "name": "Touba" }
@@ -207,12 +207,14 @@ const menuToggle = document.getElementById('menuToggle');
     },
     "sameAs": [
       "https://wa.me/221781628141",
-      "https://www.tiktok.com/@odysseeclean221"
+      "https://www.tiktok.com/@odysseeclean221",
+      "https://www.facebook.com/people/Odyss%C3%A9e-Clean-221/61588665011713/"
     ],
     "makesOffer": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nettoyage de fauteuils et canapés" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nettoyage de matelas" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nettoyage de moquettes et tapis" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nettoyage de moquettes et tapis" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nettoyage fin de chantier" } }
     ]
   });
 

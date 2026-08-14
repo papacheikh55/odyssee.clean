@@ -149,8 +149,8 @@
   }
   .mark-caption .ln{width:34px;height:1px;background:rgba(184,137,61,.6);}
   .mark-caption span{
-    font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--navy);
-    letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;
+    font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;color:var(--navy);
+    letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
   }
 
   /* ===== TRUST STRIP ===== */
@@ -169,7 +169,7 @@
 
   /* ===== SERVICES ===== */
   .services{background:var(--sand);}
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
   .svc-card{
     background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
     padding:32px 28px;transition:transform .2s ease, box-shadow .2s ease;
@@ -378,6 +378,10 @@
     .whatsapp-fab{width:52px;height:52px;}
   }
 
+  @media (max-width:1080px){
+    .svc-grid{grid-template-columns:repeat(2,1fr);}
+  }
+
   @media (max-width:920px){
     nav.links, .nav-phone{display:none;}
     nav.links.is-open{
@@ -388,6 +392,8 @@
     .hero-inner{grid-template-columns:1fr;padding:56px 0;}
     .hero-visual{height:300px;order:-1;}
     .mark-ring{width:170px;height:170px;}
+    .mark-caption span{white-space:normal;text-align:center;font-size:9px;}
+    .mark-caption{max-width:80%;}
     .strip-grid{grid-template-columns:repeat(2,1fr);row-gap:20px;}
     .strip-item{border-left:none;}
     .svc-grid{grid-template-columns:1fr;}
