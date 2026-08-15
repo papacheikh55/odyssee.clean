@@ -130,13 +130,15 @@ const menuToggle = document.getElementById('menuToggle');
       const quartier = document.getElementById('bQuartier').value || 'Non renseigné';
       const address = document.getElementById('bAddress').value.trim();
 
-      const adresse = `${quartier}${address ? ' (' + address + ')' : ''}`;
-
       let msg = 'Bonjour Odyssée Clean, voici une nouvelle demande de réservation :\n\n'
         + `*Prestation :* ${service}\n`
         + `*Nom :* ${name}\n`
         + `*Tél :* ${cleanedPhone}\n`
-        + `*Adresse :* ${adresse}`;
+        + `*Adresse :* ${quartier}`;
+
+      if (address) {
+        msg += `\n*Message :* ${address}`;
+      }
 
       if (sharedLocation) {
         msg += `\n*Position GPS :* https://www.google.com/maps?q=${sharedLocation.lat},${sharedLocation.lng}`;
